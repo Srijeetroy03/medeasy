@@ -1,0 +1,21 @@
+.box-height-full{
+    height: 15em;
+    transition: all 350ms ease;
+}
+
+.box-height-0{
+    height: 0px;
+    transition: all 350ms ease;
+}
+
+@media screen and (min-width: 768px) {
+    .box-height-0, .box-height-full{
+        height: 100%;
+    }
+}
+
+.active{
+    font-weight: bold;
+    color: #16a34a;
+}
+ 
