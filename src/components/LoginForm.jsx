@@ -25,22 +25,17 @@ function LoginForm() {
     e.preventDefault();
     const loadToast = toast.loading("Logging in...");
     try {
-      console.log("user info: ", userObj);
       await dispatch(loginUser(userObj));
       toast.success("Logged in successfully");
       navigate("/home");
     } catch (err) {
-      console.log(err);
       toast.error(err.message);
-    }
-    finally{
+    } finally {
       toast.dismiss(loadToast);
     }
-    // console.log('user created: ',userObj);
   };
 
   const handleUsername = (e) => {
-    console.log(e.target.value);
     setUserObj((prev) => {
       return {
         ...prev,
@@ -50,7 +45,6 @@ function LoginForm() {
   };
 
   const handlePassword = (e) => {
-    console.log(e.target.value);
     setUserObj((prev) => {
       return {
         ...prev,
@@ -61,7 +55,7 @@ function LoginForm() {
 
   return (
     <div className="flex flex-col w-full p-10 px-6 md:p-10 gap-8">
-      <h2 className="font-manrope font-bold text-3xl">Login</h2>
+      <h2 className="font-poppins font-bold text-3xl">Login</h2>
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col input-grp relative animate-form ">
           <label className="" htmlFor="email">
@@ -71,7 +65,7 @@ function LoginForm() {
             required
             onChange={handleUsername}
             placeholder="Enter your username or email"
-            className="focus:outline-0 border-b-2 focus:border-b-green-600 transition-colors p-2 py-4"
+            className="focus:outline-0 border-b-2  p-2 py-4 bg-blue-100"
             type="text"
             name="username"
             id="username"
@@ -83,7 +77,7 @@ function LoginForm() {
           <input
             required
             onChange={handlePassword}
-            className="focus:outline-0 border-b-2 focus:border-b-green-600 transition-colors pr-10 p-2"
+            className="focus:outline-0 border-b-2 transition-colors pr-10 p-2 bg-blue-100"
             type={showPassword ? "text" : "password"}
             name="password"
             id="password"

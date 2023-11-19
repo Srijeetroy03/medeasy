@@ -1,14 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{html,js}"],
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      fontFamily:{
-        manrope: ['Manrope', 'sans-serif'],
-        noticia: ['Noticia Text', 'serif'],
-        playfair: ['Playfair Display', 'serif'],
-      }
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [],
-}
+};

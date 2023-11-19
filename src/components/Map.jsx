@@ -9,7 +9,6 @@ import Map, {
   ScaleControl,
   Source,
   Layer,
-  FillExtrusionLayer,
 } from "react-map-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
@@ -306,7 +305,7 @@ function HospitalMap({
 
   const HospitalsPin = () => (
     <FaHospitalAlt className="bg-red-600 text-white text-lg p-1 rounded-sm" />
-  )
+  );
 
   const [medium, setMedium] = useState(mediums[0]);
 
@@ -349,9 +348,13 @@ function HospitalMap({
     const lon2 = selectedHospital.geometry.coordinates[0];
     try {
       const res = await axios.get(
-        `https://api.mapbox.com/directions/v5/mapbox/${medium.value}/${lon1},${lat1};${lon2},${lat2}?geometries=geojson&access_token=${process.env.REACT_APP_MAPBOX_PUBLIC_TOKEN}`
+        `https://api.mapbox.com/directions/v5/mapbox/${
+          medium.value
+        }/${lon1},${lat1};${lon2},${lat2}?geometries=geojson&access_token=${
+          import.meta.env.REACT_APP_MAPBOX_PUBLIC_TOKEN
+        }`
       );
-      console.log("Hospital Route", res.data);
+
       setHospitalRoute(res.data.routes[0].geometry);
       setHospitalRoutes(res.data.routes);
     } catch (err) {
@@ -370,7 +373,7 @@ function HospitalMap({
       <Map
         ref={mapRef}
         mapLib={import("mapbox-gl")}
-        mapboxAccessToken={process.env.REACT_APP_MAPBOX_PUBLIC_TOKEN}
+        mapboxAccessToken={import.meta.env.REACT_APP_MAPBOX_PUBLIC_TOKEN}
         initialViewState={viewPort}
         onViewportChange={(viewPort) => {
           setViewPort(viewPort);
@@ -393,7 +396,6 @@ function HospitalMap({
             {selectedHospital &&
               mediums &&
               mediums.map((m, index) => {
-                console.log(medium);
                 return (
                   <button
                     title={m.name}
@@ -440,7 +442,7 @@ function HospitalMap({
               </form>
             </div>
             {selectedHospital && hospitalRoute && (
-              <div className="bg-green-600 lg:rounded-lg w-full lg:max-w-[500px] h-fit shadow-md text-[0.85rem] font-manrope overflow-hidden order-3 lg:order-2">
+              <div className="bg-green-600 lg:rounded-lg w-full lg:max-w-[500px] h-fit shadow-md text-[0.85rem] font-poppins overflow-hidden order-3 lg:order-2">
                 <div className="p-4 rounded-b-lg drop-shadow-xl bg-white flex flex-col gap-1 ">
                   <h1 className="text-xl font-bold text-slate-900">
                     {selectedHospital?.properties?.name}
@@ -581,7 +583,6 @@ function HospitalMap({
         )}
         <GeolocateControl
           onGeolocate={(e) => {
-            console.log(e);
             setCurrentLocation({
               latitude: e.coords.latitude,
               longitude: e.coords.longitude,

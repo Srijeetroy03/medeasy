@@ -48,7 +48,7 @@ function Profile() {
   return (
     <>
       <EditProfile show={show} handleShow={handleShow} />
-      <div className="flex flex-col w-full flex-wrap font-manrope py-8">
+      <div className="flex flex-col w-full flex-wrap font-poppins py-8">
         <div
           id="profileHead"
           ref={profileRef}
@@ -64,7 +64,7 @@ function Profile() {
             className="h-12 md:h-full object-cover rounded-full p-0"
             style={{ aspectRatio: 1 / 1 }}
           />
-          <div className="font-manrope flex flex-col w-full">
+          <div className="font-poppins flex flex-col w-full">
             <h2 className="text-md font-bold flex w-full items-center justify-between gap-2">
               {id === userInfo?._id
                 ? userInfo?.name
@@ -97,7 +97,7 @@ function Profile() {
             className="h-24 md:h-full object-cover rounded-full p-0"
             style={{ aspectRatio: 1 / 1 }}
           />
-          <div className="font-manrope  p-8 flex flex-col gap-4">
+          <div className="font-poppins  p-8 flex flex-col gap-4">
             <h2 className="text-4xl font-extrabold flex gap-4">
               {id === userInfo?._id
                 ? userInfo?.name

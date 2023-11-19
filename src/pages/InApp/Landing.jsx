@@ -23,7 +23,7 @@ function Landing() {
 
   return (
     // entire landing page
-    <div className="font-manrope flex flex-col gap-16">
+    <div className="font-poppins flex flex-col gap-16">
       <section className="flex flex-col md:flex-row w-full items-center pt-4 md:pt-16 justify-between gap-8 md:gap-0">
         <div
           className="flex flex-col gap-4 items-center md:items-start justify-center text-center md:text-left"
@@ -39,12 +39,19 @@ function Landing() {
             of their mental, spiritual, and physical well-being.
           </p>
           <div className="w-[230px] inline-flex items-center justify-center mb-4">
-            <Link to={"/map"} id="update-btn" className="relative inline-flex justify-start items-center rounded-full bg-gradient-to-br from-green-500 to-green-600 p-2 pl-4 text-white gap-2">
+            <Link
+              to={"/map"}
+              id="update-btn"
+              className="relative inline-flex justify-start items-center rounded-full bg-gradient-to-br from-green-500 to-green-600 p-2 pl-4 text-white gap-2"
+            >
               <div id="update-text" className="inline-flex gap-2">
                 <FaMapMarkedAlt className="text-2xl " />
                 <span className="flex-1 w-fit">Introducing Maps</span>
               </div>
-              <FiArrowUpRight id="update-arrow" className="bg-white absolute top-[50%] translate-y-[-50%] text-3xl p-1 shadow-lg text-green-600 rounded-full w-[32px] " />
+              <FiArrowUpRight
+                id="update-arrow"
+                className="bg-white absolute top-[50%] translate-y-[-50%] text-3xl p-1 shadow-lg text-green-600 rounded-full w-[32px] "
+              />
             </Link>
           </div>
           <p>🎉Now find the nearest hospitals and blood banks in your area!</p>
@@ -52,7 +59,7 @@ function Landing() {
             <div className="overflow-hidden flex flex-row items-center rounded-md w-full md:w-[70%] shadow-md">
               <input
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-[80%] p-4 focus:outline-none font-manrope"
+                className="w-[80%] p-4 focus:outline-none font-poppins"
                 type="email"
                 placeholder="Enter your email"
                 value={email}
@@ -137,7 +144,7 @@ function Landing() {
         <h2 className="capitalize text-2xl md:text-5xl text-center">
           Get more important information about health
         </h2>
-        <div className="font-manrope flex flex-col md:flex-row flex-wrap gap-2 md:gap-16 md:p-8">
+        <div className="font-poppins flex flex-col md:flex-row flex-wrap gap-2 md:gap-16 md:p-8">
           {blogList?.slice(0, 3)?.map((blog) => (
             <Suspense fallback={<div>Loading...</div>} key={blog._id}>
               <BlogCard key={blog._id} blog={blog} />
