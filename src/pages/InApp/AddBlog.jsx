@@ -133,6 +133,9 @@ function AddBlog() {
             <Link
               to="/preview"
               className="bg-black text-white shadow-md hover:-translate-y-1 transition-all p-2 rounded"
+              onClick={() => {
+                console.log("The blog you should see: ", blog);
+              }}
             >
               Preview
             </Link>

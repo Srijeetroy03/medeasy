@@ -25,19 +25,20 @@ function Blog() {
     editBlogContent,
     blogList,
   } = useSelector((state) => state.blog);
-  console.log("blogContent: ", blogContent);
-  console.log("editBlogContent: ", editBlogContent);
+  // console.log("blogContent: ", blogContent);
+  // console.log("editBlogContent: ", editBlogContent);
   const { userInfo } = useSelector((state) => state.userAuth);
-  console.log("blogList: ", blogList);
+  // console.log("blogList: ", blogList);
+
   const { id } = useParams();
   const { pathname } = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log(blogContent?.author);
+  // console.log(blogContent?.author);
   const [blog, setBlog] = useState(null);
   const [showDel, setShowDel] = useState(false);
+
   useEffect(() => {
-    console.log(pathname);
     window.scrollTo(0, 0);
     if (pathname === `/blog/${id}`) {
       if (id !== null) {
@@ -50,7 +51,7 @@ function Blog() {
   useEffect(() => {
     if (pathname === "/edit/preview") {
       // setBlog(editBlogContent)
-      console.log("editBlogContent: ", editBlogContent);
+      // console.log("editBlogContent: ", editBlogContent);
       const converter = new showdown.Converter();
       const html = converter.makeHtml(editBlogContent?.content);
       editBlogContent.contentHtml = html;
@@ -59,13 +60,13 @@ function Blog() {
   }, [pathname, blogContent, editBlogContent]);
 
   const handleEdit = async () => {
-    console.log("Edit");
-    await dispatch(setEditBlogContent(blog));
+    // console.log("Edit");
+    dispatch(setEditBlogContent(blog));
     navigate(`/edit`);
   };
   const handleDelete = async () => {
-    console.log("Delete");
-    await dispatch(deleteBlog(blog));
+    // console.log("Delete");
+    dispatch(deleteBlog(blog));
     navigate(`/home`);
   };
 
@@ -76,7 +77,7 @@ function Blog() {
       blog !== null &&
       blog?.contentHtml !== null
     )
-      document.getElementById("blog").innerHTML = blog?.contentHtml;
+      document.getElementById("blog").innerHTML = blog?.content;
     else document.getElementById("blog").innerHTML = null;
   }, [blog]);
 
