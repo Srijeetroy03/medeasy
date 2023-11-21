@@ -32,66 +32,65 @@ function App() {
   }, []);
 
   return (
-    // <SocketProvider>
-
-    // </SocketProvider>
-    <NavProvider>
-      <div className="w-full">
-        <Router>
-          <Routes>
-            <Route path="/" element={<AppHome />}>
-              <Route path="home" element={<Landing />} />
-              <Route path="blog" element={<Home />} />
-              <Route path="doctor" element={<Doctor />}>
-                <Route path=":speciality" element={<DoctorList />} />
+    <SocketProvider>
+      <NavProvider>
+        <div className="w-full">
+          <Router>
+            <Routes>
+              <Route path="/" element={<AppHome />}>
+                <Route path="home" element={<Landing />} />
+                <Route path="blog" element={<Home />} />
+                <Route path="doctor" element={<Doctor />}>
+                  <Route path=":speciality" element={<DoctorList />} />
+                </Route>
+                <Route path="appointments" element={<Appointment />} />
+                <Route path="doctor/profile/:id" element={<DoctorProfile />} />
+                <Route path="blog/:id" element={<Blog />} />
+                <Route
+                  path="add"
+                  element={<ProtectedRoute Component={AddBlog} />}
+                />
+                <Route
+                  path="edit"
+                  element={<ProtectedRoute Component={EditBlog} />}
+                />
+                <Route
+                  path="edit/preview"
+                  element={<ProtectedRoute Component={Blog} />}
+                />
+                <Route
+                  path="preview"
+                  element={<ProtectedRoute Component={Blog} />}
+                />
+                <Route path="/profile/:id" element={<Profile />} />
+                <Route path="user-authentication" element={<Authentication />}>
+                  <Route path="login" element={<LoginForm />} />
+                  <Route path="signup" element={<SignupForm />} />
+                  <Route path="profile" element={<ProfileForm />} />
+                </Route>
               </Route>
-              <Route path="appointments" element={<Appointment />} />
-              <Route path="doctor/profile/:id" element={<DoctorProfile />} />
-              <Route path="blog/:id" element={<Blog />} />
-              <Route
-                path="add"
-                element={<ProtectedRoute Component={AddBlog} />}
-              />
-              <Route
-                path="edit"
-                element={<ProtectedRoute Component={EditBlog} />}
-              />
-              <Route
-                path="edit/preview"
-                element={<ProtectedRoute Component={Blog} />}
-              />
-              <Route
-                path="preview"
-                element={<ProtectedRoute Component={Blog} />}
-              />
-              <Route path="/profile/:id" element={<Profile />} />
-              <Route path="user-authentication" element={<Authentication />}>
-                <Route path="login" element={<LoginForm />} />
-                <Route path="signup" element={<SignupForm />} />
-                <Route path="profile" element={<ProfileForm />} />
-              </Route>
-            </Route>
 
-            <Route path="/map" element={<Hospitals />} />
+              <Route path="/map" element={<Hospitals />} />
 
-            {/* <Route path="/meet/:roomId" element={<Meet />} /> */}
+              <Route path="/meet/:roomId" element={<Meet />} />
 
-            {/* <Route path='/' element={<ProtectedRoute Component={AppHome}/>}>
+              {/* <Route path='/' element={<ProtectedRoute Component={AppHome}/>}>
           <Route path='home' element={<Landing/>}/>
           <Route path='blogs' element={<Home/>}/>
           
           <Route path='blog/:id' element={<Blog/>}/>
           <Route path='/profile/:id' element={<Profile/>}/>
         </Route> */}
-            {/* <Route path='/user-authentication' element={<Authentication/>}>
+              {/* <Route path='/user-authentication' element={<Authentication/>}>
           <Route path='login' element={<LoginForm/>}/>
           <Route path='signup' element={<SignupForm/>}/>
           <Route path='profile' element={<ProfileForm/>}/>
         </Route> */}
-          </Routes>
-        </Router>
-      </div>
-    </NavProvider>
+            </Routes>
+          </Router>
+        </div>
+      </NavProvider>
+    </SocketProvider>
   );
 }
 
