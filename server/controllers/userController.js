@@ -38,7 +38,7 @@ const loginUser = async (req, res) => {
     const user = await User.findOne({ username: req.body.username });
     if (user === null) throw new Error("Username not found. Please register");
     else {
-      const validatePassword = await (user.password === req.body.password);
+      const validatePassword = user.password === req.body.password;
 
       delete user._doc.password;
       if (validatePassword) {

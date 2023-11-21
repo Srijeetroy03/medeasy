@@ -25,7 +25,7 @@ function LoginForm() {
     e.preventDefault();
     const loadToast = toast.loading("Logging in...");
     try {
-      await dispatch(loginUser(userObj));
+      dispatch(loginUser(userObj));
       toast.success("Logged in successfully");
       navigate("/home");
     } catch (err) {
