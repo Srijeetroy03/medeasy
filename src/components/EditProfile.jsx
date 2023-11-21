@@ -1,37 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/form.css";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUser } from "../redux/actions/userAuthActions";
 import { updateUserApi } from "../redux/apis/registerUser";
 import { showAlert } from "../redux/actions/alertActions";
-import { useNavigate, useParams } from "react-router-dom";
-import ErrorIcon from "@mui/icons-material/Error";
 import CancelIcon from "@mui/icons-material/Cancel";
 import Avatar from "../images/avatar.png";
-import CameraAltIcon from "@mui/icons-material/CameraAlt";
+import { updateDoctorDetails } from "../redux/actions/docActions";
 
 function EditProfile({ show, handleShow }) {
   const { userInfo } = useSelector((state) => state.userAuth);
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [error, setError] = useState("");
-  const [userObj, setUserObj] = useState(userInfo);
-  const { id } = useParams();
+  const [userObj, setUserObj] = useState(null);
+
+  useEffect(() => {
+    if (userInfo) {
+      setUserObj(userInfo);
+    }
+  }, [userInfo]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (userObj?.username === "") {
       setError((prev) => "Please fill all the fields");
       return;
     }
+
     await updateUserApi({
       ...userInfo,
       ...userObj,
     })
-      .then(async (res) => {
-        await dispatch(updateUser(res));
+      .then((res) => {
+        dispatch(updateUser(res));
+        if (userInfo?.role === "Doctor") dispatch(updateDoctorDetails(res));
         handleShow();
       })
+
       .catch((err) => {
         setError((prev) => err.response.data.error);
         dispatch(showAlert({ msg: err.response.data.error, type: "error" }));
@@ -94,9 +100,10 @@ function EditProfile({ show, handleShow }) {
   };
 
   return (
-    userInfo && (
+    show &&
+    userObj && (
       <div
-        className={`font-poppins fixed bottom-0 transition-all rounded-t-[24px] z-10 left-0  w-full bg-gray-200 flex flex-col px-8 gap-4 ${
+        className={`font-poppins fixed bottom-0 transition-all rounded-t-[24px] z-10 left-0 pb-4  w-full bg-gray-200 flex flex-col px-8 gap-4 ${
           show ? "py-8 max-h-[680px]" : "py-0 h-0"
         }`}
       >
@@ -116,7 +123,7 @@ function EditProfile({ show, handleShow }) {
               required
               onChange={handleName}
               placeholder="Enter your full name"
-              className="focus:outline-0 border-b-2 focus:border-b-black transition-colors p-2"
+              className="focus:outline-0 border-b-2 focus:border-b-black transition-colors p-2 bg-white rounded-[6px]"
               type="text"
               name="name"
               id="name"
@@ -130,7 +137,7 @@ function EditProfile({ show, handleShow }) {
               value={userObj?.email}
               required
               onChange={handleEmail}
-              className="focus:outline-0 border-b-2 focus:border-b-black transition-colors p-2"
+              className="focus:outline-0 border-b-2 focus:border-b-black transition-colors p-2 bg-white rounded-[6px]"
               type="email"
               name="email"
               id="email"
@@ -143,7 +150,7 @@ function EditProfile({ show, handleShow }) {
               value={userObj?.description}
               minLength={100}
               placeholder="Add a description of yourself"
-              className="bg-gray-100 focus:outline-0 focus:border-b-2 focus:border-b-black transition-colors p-2"
+              className="bg-gray-100 focus:outline-0  transition-colors p-2"
               name="desc"
               id="desc"
               cols="30"

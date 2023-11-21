@@ -351,7 +351,7 @@ function HospitalMap({
         `https://api.mapbox.com/directions/v5/mapbox/${
           medium.value
         }/${lon1},${lat1};${lon2},${lat2}?geometries=geojson&access_token=${
-          import.meta.env.REACT_APP_MAPBOX_PUBLIC_TOKEN
+          import.meta.env.VITE_MAPBOX_PUBLIC_TOKEN
         }`
       );
 
@@ -373,7 +373,7 @@ function HospitalMap({
       <Map
         ref={mapRef}
         mapLib={import("mapbox-gl")}
-        mapboxAccessToken={import.meta.env.REACT_APP_MAPBOX_PUBLIC_TOKEN}
+        mapboxAccessToken={import.meta.env.VITE_MAPBOX_PUBLIC_TOKEN}
         initialViewState={viewPort}
         onViewportChange={(viewPort) => {
           setViewPort(viewPort);
@@ -389,7 +389,7 @@ function HospitalMap({
           <div className="flex lg:flex-col gap-2 px-4 pt-6  lg:p-0 flex-wrap">
             <Link
               to="/"
-              className="p-2 bg-white rounded-md w-fit text-2xl shadow-md"
+              className="p-2 bg-white rounded-md w-fit text-3xl shadow-md"
             >
               <TiHomeOutline />
             </Link>
@@ -419,10 +419,10 @@ function HospitalMap({
                   e.preventDefault();
                   setRadius(parseInt(e.target[0].value) / 100);
                 }}
-                className="pr-2 order-2 lg:order-3 py-2 space-x-2 bg-white rounded-md text-lg shadow-md inline-flex justify-between items-end w-full"
+                className="pr-2 order-2 lg:order-3 py-[6px] space-x-2 bg-white rounded-md text-lg shadow-md inline-flex justify-between items-end w-full"
               >
                 <input
-                  className="pl-2 self-center lg:flex-1 w-min"
+                  className="pl-2 self-center lg:flex-1 w-min bg-white"
                   type="number"
                   name="range"
                   placeholder="Enter range in kms"

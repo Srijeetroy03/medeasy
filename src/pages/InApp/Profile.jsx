@@ -20,17 +20,17 @@ function Profile() {
     blogListLoading,
     profileBlogList,
   } = useSelector((state) => state.blog);
+
   const { userInfo } = useSelector((state) => state.userAuth);
-  console.log(profileBlogList);
+
   useEffect(() => {
     if (pathname.includes("profile")) dispatch(getProfileBlogsFromDb(id));
   }, [id, userInfo]);
 
   const handleShow = () => {
+    document.body.classList.toggle("bodyHidden");
     setShow((prev) => !prev);
   };
-
-  console.log(profileBlogListLoading);
 
   const profileHead = document.getElementById("profileHead");
 
@@ -43,8 +43,7 @@ function Profile() {
       profileHead.classList.remove("md:top-12", "top-0");
     }
   });
-  console.log(id === userInfo?._id);
-  console.log(userInfo?.username);
+
   return (
     <>
       <EditProfile show={show} handleShow={handleShow} />

@@ -30,10 +30,9 @@ function Hospitals() {
     try {
       const res = await axios.get(
         `https://api.geoapify.com/v2/places?categories=healthcare.hospital&filter=rect:${point1},${point2},${point3},${point4}&apiKey=${
-          import.meta.env.REACT_APP_GEO_API_KEY
+          import.meta.env.VITE_GEO_API_KEY
         }`
       );
-      console.log(res.data);
       setHospitals(res.data.features);
     } catch (err) {
       console.log(err);

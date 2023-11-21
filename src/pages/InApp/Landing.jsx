@@ -38,7 +38,7 @@ function Landing() {
             services, others may think of their personal self-care; the health
             of their mental, spiritual, and physical well-being.
           </p>
-          <div className="w-[230px] inline-flex items-center justify-center mb-4">
+          <div className="w-[250px] inline-flex items-center justify-center mb-1">
             <Link
               to={"/map"}
               id="update-btn"
