@@ -14,11 +14,11 @@ const IntroPage = () => {
                     of their insurance provider and access to medical services, others may think of their
                     personal self-care; the health of their mental, spiritual, and physical well-being.
                 </p>
-                <Link to='/chatbot' style={{textDecoration:'none'}}><button>Talk to Melly <FontAwesomeIcon icon={faArrowRight}/></button></Link>
+                <Link to='/chatbot' style={{textDecoration:'none',width:0,height:0}}><button>Talk to Melly <FontAwesomeIcon icon={faArrowRight} className='arrow'/></button></Link>
             </div>
             
             <div className="rightimg">
-                <img src={Vectary} alt="" srcset="" width={700} height={430} />
+                <img src={Vectary} alt="" srcset="" />
             </div>
         </div>
     )

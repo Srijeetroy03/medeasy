@@ -1,6 +1,6 @@
 import React from 'react'
-import aiBot from '../../Images/aiBot.png'
-import '../../css/ChatBot.css'
+import aiBot from '../../images/aiBot.png'
+import '../../styles/ChatBot.css'
 import Box from './Box'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMicrophone } from '@fortawesome/free-solid-svg-icons'

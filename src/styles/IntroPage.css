@@ -1,26 +1,33 @@
 .IntroPage{
     display: flex;
+    justify-content: space-between;
     font-family: "Poppins", sans-serif;
+    margin-bottom: 190px;
+    gap: 30%;
 
 }
 
 .leftinfo{
     margin-left: 3%;
+    width: 123%;
+    /* margin-right: 0%; */
 }
 
 .leftinfo h1{
     font-weight: 900;
-    font-size: 300%;
+    font-size: 450%;
     width: 100%;
     text-align: left;
     line-height: 1.2;
 }
 
 .leftinfo p{
-    font-size: 70%;
+    margin-top: 30px;
     font-family: "Poppins", sans-serif;
     text-align: left;
     color: rgb(31,41,55);
+    font-size: 80%;
+    font-weight: 500;
 }
 
 .leftinfo button{
@@ -52,5 +59,12 @@
 }
 
 .rightimg{
-    width: 64%;
+    width: 117%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rightimg img{
+    height: 460px;
+    width: 1500px;
 }
