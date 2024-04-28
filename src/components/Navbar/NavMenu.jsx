@@ -38,6 +38,13 @@ function NavMenu() {
         <NavLink
           title="Find Hospitals Near You"
           onClick={() => toggleNav()}
+          to={"/main"}
+        >
+          Melly
+        </NavLink>
+        <NavLink
+          title="Find Hospitals Near You"
+          onClick={() => toggleNav()}
           to={"/map"}
         >
           Find Hospital

@@ -24,6 +24,7 @@ import Appointment from "./pages/InApp/Appointment";
 import Meet from "./pages/Meet/Meet";
 import { SocketProvider } from "./context/SocketContext";
 import Hospitals from "./pages/InApp/Hospitals";
+import Main from "./components/Body/Main";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function App() {
                 <Route path="home" element={<Landing />} />
                 <Route path="blog" element={<Home />} />
                 <Route path="doctor" element={<Doctor />}>
-                  <Route path=":speciality" element={<DoctorList />} />
+                <Route path=":speciality" element={<DoctorList />} />
                 </Route>
                 <Route path="appointments" element={<Appointment />} />
                 <Route path="doctor/profile/:id" element={<DoctorProfile />} />
@@ -69,7 +70,7 @@ function App() {
                   <Route path="profile" element={<ProfileForm />} />
                 </Route>
               </Route>
-
+              <Route path="/main" element={<Main />} />
               <Route path="/map" element={<Hospitals />} />
 
               <Route path="/meet/:roomId" element={<Meet />} />
