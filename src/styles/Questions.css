@@ -1,0 +1,17 @@
+.Questions{
+    font-family: "Epilogue", sans-serif;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(117, 119, 123);
+    color: rgb(117, 119, 123);
+}
+
+.Questions p{
+    font-size: 25px;
+}
+
+.Questions button{
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}

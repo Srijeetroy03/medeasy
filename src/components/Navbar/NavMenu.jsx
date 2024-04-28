@@ -36,7 +36,7 @@ function NavMenu() {
             </button>
           )}
         <NavLink
-          title="Find Hospitals Near You"
+          title="Explore chatbot"
           onClick={() => toggleNav()}
           to={"/main"}
         >

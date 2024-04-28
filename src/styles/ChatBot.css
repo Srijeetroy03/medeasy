@@ -1,0 +1,77 @@
+.ChatBot {
+    margin-left: 6%;
+    margin-top: 45px;
+    font-family: "Poppins", sans-serif;
+}
+
+.head {
+    display: flex;
+    width: 42%;
+    justify-content: space-between;
+}
+
+.head img {
+    width: 14%;
+}
+
+.header-text h1 {
+    margin: 0;
+    text-align: left;
+    font-size: 200%;
+    font-weight: 500;
+}
+
+.head_span1 {
+    color: color-mix(in srgb, rgb(22, 163, 74) 100%, rgb(39, 99, 254) 30%);
+}
+
+.head_span2 {
+    color: color-mix(in srgb, rgb(22, 163, 74) 30%, rgb(39, 99, 254) 100%);
+}
+
+.box_container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.box3 {
+    background-color: rgb(213, 234, 221);
+    color: rgb(213, 234, 221);
+    height: 170px;
+    width: 30%;
+    border-radius: 15px;
+}
+
+.chat_space {
+    margin-top: 12vh;
+    margin-bottom: 70px;
+    display: flex;
+    background-color: rgb(210, 236, 220);
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 2%;
+    height: 35px;
+    border-radius: 15px;
+}
+
+.chat_space input {
+    font-family: "Poppins", sans-serif;
+    padding-left: 2%;
+    width: 95%;
+    background-color: rgb(210, 236, 220);
+    border: none;
+    height: 33px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+}
+
+::placeholder {
+    color: rgb(105, 102, 102);
+}
+
+.microphone {
+    color: rgb(156, 163, 175);
+}

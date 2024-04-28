@@ -1,0 +1,13 @@
+.LeftFooter h1{
+    margin: 0;
+    font-size: 120%;
+    text-align: left;
+}
+.LeftFooter p{
+    margin-top: 3px;
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 67%;
+    font-weight: 600;
+
+}

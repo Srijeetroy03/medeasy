@@ -1,0 +1,64 @@
+.RightFooter{
+    width: 70%;
+    margin-bottom: 30px;
+}
+.top_right{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto;
+    justify-content: space-between;
+    
+}
+.top_right p{
+    margin: 0;
+    font-size: 67%;
+    font-weight: 400;
+}
+
+.bottom_right{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottom_right h1{
+    margin: 0;
+    font-size: 125%;
+    width: 30%;
+    text-align: left;
+}
+
+.credentials_email{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.credentials_email input{
+    font-family: "Poppins", sans-serif;
+    width: 79%;
+    border: none;
+    background-color: rgba(34,187,97,0.2);
+    height: 30px;
+    border-radius: 15px;
+    padding-left: 17px;
+    font-size: 60%;
+}
+
+::placeholder {
+    color: black;
+    opacity: 1;
+  }
+
+.credentials_email button{
+    font-family: "Poppins", sans-serif;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(22,163,74);
+    font-size: 60%;
+    width: 13%;
+    cursor: pointer;
+    color: white;
+    
+}
