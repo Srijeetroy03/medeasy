@@ -1,8 +1,8 @@
 import React from 'react'
 import Vectary from '../../images/Vectary_texture.png'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
-import '../../../styles/IntroPage.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons'
+import '../../styles/IntroPage.css'
 import { Link } from 'react-router-dom'
 
 const IntroPage = () => {
@@ -14,7 +14,7 @@ const IntroPage = () => {
                     of their insurance provider and access to medical services, others may think of their
                     personal self-care; the health of their mental, spiritual, and physical well-being.
                 </p>
-                <Link to='/chatbot' style={{textDecoration:'none'}}><button>Talk to Melly</button></Link>
+                <Link to='/chatbot' style={{textDecoration:'none'}}><button>Talk to Melly <FontAwesomeIcon icon={faArrowRight}/></button></Link>
             </div>
             
             <div className="rightimg">
