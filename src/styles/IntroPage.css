@@ -1,0 +1,70 @@
+.IntroPage{
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 190px;
+    gap: 30%;
+
+}
+
+.leftinfo{
+    margin-left: 3%;
+    width: 123%;
+    /* margin-right: 0%; */
+}
+
+.leftinfo h1{
+    font-weight: 900;
+    font-size: 450%;
+    width: 100%;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.leftinfo p{
+    margin-top: 30px;
+    font-family: "Poppins", sans-serif;
+    text-align: left;
+    color: rgb(31,41,55);
+    font-size: 80%;
+    font-weight: 500;
+}
+
+.leftinfo button{
+    margin-top: 30px;
+    font-family: "Poppins", sans-serif;
+    margin-left: -11%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(22,163,74);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    height:40px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.arrow{
+    /* font-size: 140%; */
+    padding: 3px;
+    color: rgb(22,163,74) ;
+    background-color: white;
+    border-radius: 30px;
+    rotate: -50deg;
+    width: 20px;
+    height: 20px;
+    
+}
+
+.rightimg{
+    width: 117%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.rightimg img{
+    height: 460px;
+    width: 1500px;
+}

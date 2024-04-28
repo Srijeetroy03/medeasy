@@ -1,0 +1,29 @@
+.Navbar{
+    margin-left: 2.5%;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Poppins", sans-serif;
+}
+
+.rightNav ul{
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.rightNav ul li{
+    list-style: none;
+    display: flex;
+    margin-right: 36px;
+    
+}
+
+.green-text{
+    color: rgb(22,163,74) ;
+}
+
+.grey-text{
+    color: rgb(156, 163, 175);
+}

@@ -24,6 +24,8 @@ import Appointment from "./pages/InApp/Appointment";
 import Meet from "./pages/Meet/Meet";
 import { SocketProvider } from "./context/SocketContext";
 import Hospitals from "./pages/InApp/Hospitals";
+import Main from "./components/Body/Main";
+import ChatBot from "./components/ChatPage/ChatBot";
 
 function App() {
   const dispatch = useDispatch();
@@ -40,6 +42,9 @@ function App() {
               <Route path="/" element={<AppHome />}>
                 <Route path="home" element={<Landing />} />
                 <Route path="blog" element={<Home />} />
+                <Route path="main" element={<Main />} >
+                </Route>
+                <Route path="chatbot" element={<ChatBot/>} />
                 <Route path="doctor" element={<Doctor />}>
                   <Route path=":speciality" element={<DoctorList />} />
                 </Route>

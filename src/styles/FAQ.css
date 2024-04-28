@@ -1,0 +1,46 @@
+.FAQ{
+    margin-top: 150px;
+    
+    border-bottom: 1px solid black;
+}
+h1{
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size: 290%;
+    font-weight: 800;
+}
+
+.ask_melly_questions_container{
+    margin-top: 130px;
+}
+
+.other_questions{
+    font-weight: 600;   
+}
+
+.ask_melly_questions_container p{
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    color: rgb(117, 119, 123);
+}
+
+.melly_button{
+    font-family: "Poppins", sans-serif;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.ask_melly_questions_container button{
+    font-family: "Poppins", sans-serif;
+    background-color: rgb(22,163,74);
+    border: none;
+    border-radius: 30px;
+    color: white;
+    height:40px;
+    width: 120px;
+    cursor: pointer;
+}
