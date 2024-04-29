@@ -1,12 +1,11 @@
-import React, { useEffect } from "react";
-import LogoutBtn from "./LogoutBtn";
-import { useNav } from "../../context/NavContext";
-import "../../styles/navMenu.css";
-import { NavLink, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
-import Avatar from "../../images/avatar.png";
-import AddBoxOutlinedIcon from "@mui/icons-material/AddBoxOutlined";
 import SearchIcon from "@mui/icons-material/Search";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { NavLink, useLocation } from "react-router-dom";
+import { useNav } from "../../context/NavContext";
+import Avatar from "../../images/avatar.png";
+import "../../styles/navMenu.css";
+import LogoutBtn from "./LogoutBtn";
 
 function NavMenu() {
   const { navOpen, toggleNav, toggleSearchBar } = useNav();
@@ -38,7 +37,7 @@ function NavMenu() {
         <NavLink
           title="Explore chatbot"
           onClick={() => toggleNav()}
-          to={"/main"}
+          to={"/melly"}
         >
           Melly
         </NavLink>

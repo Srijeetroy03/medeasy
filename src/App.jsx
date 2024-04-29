@@ -41,7 +41,7 @@ function App() {
               <Route path="home" element={<Landing />} />
               <Route path="blog" element={<Home />} />
               <Route path="main" element={<Main />}></Route>
-              <Route path="chatbot" element={<ChatBot />} />
+              <Route path="melly" element={<ChatBot />} />
               <Route path="doctor" element={<Doctor />}>
                 <Route path=":speciality" element={<DoctorList />} />
               </Route>
