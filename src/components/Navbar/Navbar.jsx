@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
-import Brand from "./Brand";
-import NavBtn from "./NavBtn";
-import NavMenu from "./NavMenu";
 import Progress from "../Progress";
-import NavButton from "./NavButton";
 import SearchAppBar from "../Search";
+import Brand from "./Brand";
+import NavButton from "./NavButton";
+import NavMenu from "./NavMenu";
 
 import { useNav } from "../../context/NavContext";
 
