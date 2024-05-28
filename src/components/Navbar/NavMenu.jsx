@@ -37,7 +37,7 @@ function NavMenu() {
         <NavLink
           title="Explore chatbot"
           onClick={() => toggleNav()}
-          to={"/melly"}
+          to={"/main"}
         >
           Melly
         </NavLink>
