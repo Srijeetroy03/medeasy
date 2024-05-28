@@ -275,13 +275,13 @@ const ChatBot = () => {
                   <h1 className="text-base">
                     {item.message
                       ? item.message.split("\n").map((line, index) => (
-                          <React.Fragment key={index}>
-                            {line}
-                            {index !== item.message.split("\n").length - 1 && (
-                              <br />
-                            )}
-                          </React.Fragment>
-                        ))
+                        <React.Fragment key={index}>
+                          {line}
+                          {index !== item.message.split("\n").length - 1 && (
+                            <br />
+                          )}
+                        </React.Fragment>
+                      ))
                       : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta distinctio error eaque laborum deleniti ipsum reprehenderit quas ea nihil illo."}
                   </h1>
                 </div>

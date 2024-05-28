@@ -3,11 +3,12 @@
 
   border-bottom: 1px solid black;
 }
-h1{
-    font-family: "Inter", sans-serif;
-    text-align: center;
-    font-size: 290%;
-    font-weight: 800;
+
+h1 {
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  font-size: 290%;
+  font-weight: 800;
 }
 
 .ask_melly_questions_container {
@@ -43,4 +44,16 @@ h1{
   height: 40px;
   width: 120px;
   cursor: pointer;
+}
+
+.Answers {
+  font-family: "Epilogue", sans-serif;
+  border-bottom: 1px solid rgb(117, 119, 123);
+  font-family: "Epilogue", sans-serif;
+  color: rgb(117, 119, 123);
+}
+
+.Answers p {
+  font-size: 20px;
+  margin-bottom: 30px;
 }
