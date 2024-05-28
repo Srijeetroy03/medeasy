@@ -1,6 +1,6 @@
 .IntroPage{
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     font-family: "Poppins", sans-serif;
     margin-bottom: 190px;
     gap: 30%;
@@ -59,9 +59,10 @@
 }
 
 .rightimg{
-    width: 117%;
+    /* width: 117%; */
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
 }
 
 .rightimg img{

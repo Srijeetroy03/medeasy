@@ -18,7 +18,7 @@ const IntroPage = () => {
             </div>
             
             <div className="rightimg">
-                <img src={Vectary} alt="" srcset="" />
+                <img src={Vectary} alt="" srcset="" style={{height:"350px"}}/>
             </div>
         </div>
     )
