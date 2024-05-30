@@ -1,3 +1,5 @@
+
+
 import axios from "axios";
 import clsx from "clsx";
 import * as echarts from "echarts";
@@ -192,26 +194,24 @@ const ChatBot = () => {
   };
 
   return (
-    <div className="min-h-[85vh] max-h-[85vh] overflow-y-scroll pt-4 px-10 flex-col justify-between items-center flex relative">
+    <div className="chatbot-container">
       <div
         className={clsx(
-          "w-full flex flex-col justify-start font-poppins",
+          "chatbot-header",
           (chats?.length > 1 || (chats?.length > 0 && isChatBot)) && "hidden"
         )}
       >
-        <h1 className=" justify-start w-fit font-bold flex items-center gap-10 text-5xl">
-          <span className="text-[#16a34a] ">Hello.</span>
+        <h1 className="chatbot-title">
+          <span className="highlight">Hello.</span>
 
           <label
             className={clsx(
-              "inline-flex items-center cursor-pointer",
-              loading && "cursor-not-allowed brightness-75"
+              "switch",
+              loading && "disabled"
             )}
           >
             <input
               type="checkbox"
-              value=""
-              className="sr-only peer"
               disabled={loading}
               onChange={(e) => {
                 if (e.target.checked) {
@@ -224,10 +224,10 @@ const ChatBot = () => {
                 }
               }}
             />
-            <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-[#16a34a] dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#16a34a]"></div>
+            <div className="slider"></div>
           </label>
         </h1>
-        <h2 className="text-4xl opacity-80">How can I help you today?</h2>
+        <h2 className="chatbot-subtitle">How can I help you today?</h2>
       </div>
 
       <div
@@ -237,42 +237,40 @@ const ChatBot = () => {
           height: "200px",
         }}
         id="chart-container"
-        className="min-w-fit "
+        className="min-w-fit"
       />
 
       <div
         className={clsx(
-          " overflow-scroll flex flex-col gap-10 font-poppins mx-auto  w-[90%] pb-4",
+          "chatbot-chat-container",
           isChatBot && chats?.length > 0
-            ? "min-h-[600px] max-h-[800px]"
-            : "max-h-[320px]"
+            ? "min-height"
+            : "max-height"
         )}
-        id=" chatsContainer"
+        id="chatsContainer"
         ref={chatsContainerRef}
       >
         {chats?.map((item, index) => {
           return (
-            <div key={index} className=" ">
+            <div key={index} className="chat-item">
               {item?.type === "user" ? (
-                <div className="flex items-center gap-3">
+                <div className="chat-item user">
                   <img
                     src="https://lh3.googleusercontent.com/a/default-user=s64-c"
                     alt=""
-                    className="w-10 h-10 rounded-full bg-gray-200"
                   />
-                  <h1 className="text-base">
+                  <h1 className="message">
                     {item.message ||
                       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta distinctio error eaque laborum deleniti ipsum reprehenderit quas ea nihil illo."}{" "}
                   </h1>
                 </div>
               ) : (
-                <div className="flex items-start gap-3">
+                <div className="chat-item melly">
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGM8wnUnzLRIiqsXavc0DSFrkReQJGD-cqa_HR95hvYQ&s"
                     alt=""
-                    className="w-10 h-10 rounded-full bg-gray-200"
                   />
-                  <h1 className="text-base">
+                  <h1 className="message">
                     {item.message
                       ? item.message.split("\n").map((line, index) => (
                         <React.Fragment key={index}>
@@ -298,18 +296,17 @@ const ChatBot = () => {
         ></iframe>
       )}
 
-      <div className="flex justify-between items-center w-full border-solid border-[#16a34a] rounded-lg  p-2 border-[1px]">
+      <div className="input-container">
         <input
           type="text"
-          className=" text-sm w-[90%]"
-          placeholder="So what's on your mind ?"
+          placeholder="So what's on your mind?"
           value={prompt}
           onChange={(e) => {
             setPrompt(e.target.value);
           }}
         />
         <IoIosSend
-          className=" w-[26px] h-[26px] mr-4 cursor-pointer"
+          className="send-icon"
           onClick={() => {
             handlePredict();
           }}
@@ -320,3 +317,5 @@ const ChatBot = () => {
 };
 
 export default ChatBot;
+
+
