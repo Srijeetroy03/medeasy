@@ -24,7 +24,7 @@ const FAQ = () => {
     const[ansStatus, setansStatus]=useState(false)
     const[ansStatus1, setansStatus1]=useState(false)
     const[ansStatus2, setansStatus2]=useState(false)
-    let count=100
+
     return (
         <div className='FAQ'>
             <h1>Frequently asked Questions</h1>

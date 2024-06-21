@@ -6,7 +6,11 @@ import * as echarts from "echarts";
 import React, { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import { IoIosSend } from "react-icons/io";
+import Switch from '@mui/material/Switch';
+import { styled } from '@mui/material/styles';
+import FormControlLabel from '@mui/material/FormControlLabel';
 import "../../styles/ChatBot.css";
+
 
 const ChatBot = () => {
   const [chats, setChats] = useState([]);
@@ -193,6 +197,7 @@ const ChatBot = () => {
       });
   };
 
+  
   return (
     <div className="chatbot-container">
       <div
